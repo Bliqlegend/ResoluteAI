@@ -4,6 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django = "*"
+djangorestframework = "*"
+pytz = "*"
+django-widget-tweaks = "*"
+enum-compat = "*"
+eventlet = "*"
+python-engineio = "*"
+python-socketio = "*"
+six = "*"
 
 [dev-packages]
 

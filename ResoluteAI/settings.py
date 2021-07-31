@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'chat',
     'rest_framework',
     'widget_tweaks',
+    'socketio_app',
 ]
 
 MIDDLEWARE = [
