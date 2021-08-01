@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Display Webcam Stream</title>
+
+    <style>
+        #container1 {
+            margin: 0px auto;
+            width: 500px;
+            height: 375px;
+            border: 15px #333 solid;
+            margin-right: 20px;
+        }
+        
+        #container2 {
+            margin: 0px auto;
+            width: 500px;
+            height: 375px;
+            border: 15px #333 solid;
+            margin-left: 20px;
+            margin-top: -405px;
+        }
+        
+        #videoElement1 {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+        
+        #videoElement2 {
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+        
+        #startButton1 {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        #stopbutton1 {
+            background-color: #DC143C;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        #startButton2 {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        #stopbutton2 {
+            background-color: #DC143C;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container1">
+        <video autoplay="true" id="videoElement1">
+	
+	</video>
+        <input type="button" value="Start" onclick="start()" id="startButton1">
+        <input type="button" value="Stop" onclick="window.location.reload();" id="stopbutton1">
+    </div>
+
+    <div id="container2">
+        <video autoplay="true" id="videoElement2">
+	
+	</video>
+        <input type="button" value="Start" onclick="start1()" id="startButton2">
+        <input type="button" value="Stop" onclick="window.location.reload();" id="stopbutton2">
+    </div>
+
+
+    <script>
+        function start() {
+            var video = document.querySelector("#videoElement1");
+
+
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({
+                        video: true
+                    })
+                    .then(function(stream) {
+                        video.srcObject = stream;
+                    })
+                    .catch(function(err0r) {
+                        console.log("Something went wrong!");
+                    });
+            }
+        }
+
+
+        function start1() {
+            var video = document.querySelector("#videoElement2");
+
+
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({
+                        video: true
+                    })
+                    .then(function(stream) {
+                        video.srcObject = stream;
+                    })
+                    .catch(function(err0r) {
+                        console.log("Something went wrong!");
+                    });
+            }
+        }
+    </script>
+</body>
+
+</html>
